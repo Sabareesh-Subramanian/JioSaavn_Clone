@@ -2,6 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import { SignUp } from "./components/SignUp";
 import { LoginPage } from "./components/Login";
 import { MobileLogin } from "./components/MobileLogin";
+import { Homepage } from "./components/Homepage/Homepage";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/mobile">
           <MobileLogin />
+        </Route>
+        <Route path="/home">
+          <Homepage />
         </Route>
       </Switch>
     </div>
