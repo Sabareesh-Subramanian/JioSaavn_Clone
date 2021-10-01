@@ -1,19 +1,16 @@
-import { MobLog } from "../stylemodules/MobileLoginStyle";
-import signup from "../images/signup.png";
-import logo from "../images/logo.png";
+import { OtpLog } from "../../stylemodules/OtpStyles";
+import signup from "../../images/signup.png";
+import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-export const MobileLogin = () => {
-  const [number, setNumber] = useState("");
-  const handleNumber = (e) => {
-    setNumber(e.target.value);
-  };
+export const Otp = () => {
+  const history = useHistory();
   const handleLogin = () => {
-    console.log(number);
+    history.push("/home");
   };
   return (
-    <MobLog>
+    <OtpLog>
       <div>
         <div>
           <img src={logo} alt="logo" />
@@ -38,16 +35,19 @@ export const MobileLogin = () => {
           </button>
         </div>
         <div>
-          <p>Welcome to JioSaavn.</p>
-          <p>Login or signup with your mobile number.</p>
+          <p>Enter your 6-digit code.</p>
+          <p>We've sent your code tothe phone number.</p>
+          <p>
+            +919868551551 Didn't get it? <span>Resend Code</span>
+          </p>
         </div>
         <div>
           <input
-            onchange={handleNumber}
+            // onchange={handleNumber}
             type="text"
-            placeholder="Enter your mobile number"
+            placeholder="Enter Code"
           />
-          <button onClick={handleLogin}>Continue</button>
+          <button onClick={handleLogin}>Login</button>
         </div>
         <div>
           <p>
@@ -67,6 +67,6 @@ export const MobileLogin = () => {
           <button>Facebook</button>
         </div>
       </div>
-    </MobLog>
+    </OtpLog>
   );
 };
