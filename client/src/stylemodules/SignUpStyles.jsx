@@ -135,7 +135,7 @@ export const Register = styled.div`
     margin: 2.5em auto;
   }
   & > div:nth-child(2) > div:nth-child(3) > input {
-    width: 90%;
+    width: 100%;
     height: 52px;
     margin-bottom: 1.5em;
     border-radius: 69px;
