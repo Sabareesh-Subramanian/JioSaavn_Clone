@@ -1,0 +1,11 @@
+.error {
+  background-color: #f3464a;
+}
+
+.error[type="text"] {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #f6f6f6;
+}
