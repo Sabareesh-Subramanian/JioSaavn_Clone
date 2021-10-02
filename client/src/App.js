@@ -10,7 +10,10 @@ function App() {
     <div>
       <Switch>
         <Route exact path="/">
-          <SignUp />
+          <Homepage />
+        </Route>
+        <Route path="/home">
+          <Homepage />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -20,9 +23,6 @@ function App() {
         </Route>
         <Route path="/mobile">
           <MobileLogin />
-        </Route>
-        <Route path="/home">
-          <Homepage />
         </Route>
         <Route path="/otp">
           <Otp />
