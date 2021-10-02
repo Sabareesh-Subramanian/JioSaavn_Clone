@@ -6,24 +6,9 @@
       "id": 1
     },
     {
-      "email": "rahul@gmail.com",
-      "password": "123456",
+      "email": "sabareesh@test.com",
+      "password": "Password",
       "id": 2
-    },
-    {
-      "email": "priyanshu@gmail.com",
-      "password": "123456",
-      "id": 3
-    },
-    {
-      "email": "sanoj@gmail.com",
-      "password": "123456",
-      "id": 4
-    },
-    {
-      "email": "mamta@gmail.com",
-      "password": "123456",
-      "id": 5
     }
   ]
 }

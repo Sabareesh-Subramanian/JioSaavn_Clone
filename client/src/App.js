@@ -4,16 +4,38 @@ import { LoginPage } from "./components/Login/Login";
 import { MobileLogin } from "./components/Login/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
 import { Otp } from "./components/Login/OtpPage";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { Artists } from "./components/SongInfo/Artists";
+import { History } from "./components/SongInfo/History";
+import { LikedSongs } from "./components/SongInfo/LikedSongs";
+import { YourEpisodes } from "./components/SongInfo/YourEpisodes";
 
 function App() {
+  const [song, setSong] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const NewSong = async () => {
+    setIsLoading(true);
+    let res = await axios.get(
+      "https://apg-saavn-api.herokuapp.com/result/?q=thanimaye/"
+    );
+    setSong([...song, ...res.data]);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    NewSong();
+  }, []);
+
   return (
     <div>
       <Switch>
         <Route exact path="/">
-          <Homepage />
+          <Homepage song={song} loadingFlag={isLoading} />
         </Route>
         <Route path="/home">
-          <Homepage />
+          <Homepage song={song} loadingFlag={isLoading} />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -26,6 +48,18 @@ function App() {
         </Route>
         <Route path="/otp">
           <Otp />
+        </Route>
+        <Route path="/history">
+          <History />
+        </Route>
+        <Route path="/likedsongs">
+          <LikedSongs />
+        </Route>
+        <Route path="/yourepisodes">
+          <YourEpisodes />
+        </Route>
+        <Route path="/artists">
+          <Artists />
         </Route>
       </Switch>
     </div>
