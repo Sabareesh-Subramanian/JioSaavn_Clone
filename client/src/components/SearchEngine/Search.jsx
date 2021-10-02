@@ -252,7 +252,7 @@ export default function Search({ flag }) {
       "triller_available": false,
       "label_url": "/label/hit-waves-albums/levAXCbJhTM_",
       "media_url": "https://aac.saavncdn.com/093/ced76236eea90e219178c4e42123fc81_320.mp4"
-    }
+    },
   ]
   
   const searchData = (query) => {
