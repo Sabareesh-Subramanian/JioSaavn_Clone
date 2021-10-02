@@ -98,15 +98,12 @@ export const OtpLog = styled.div`
   }
   & > div:nth-child(2) > div:nth-child(2) {
     display: flex;
+    width: 550px;
     flex-direction: column;
+    margin-left: 9.25em;
     margin-top: 2.6875em;
-    margin-left: 7.625em;
-    margin-right: 6.4375em;
-    border: 1px solid black;
   }
   & > div:nth-child(2) > div:nth-child(2) > p:nth-child(1) {
-    /* text-align: center; */
-    width: 487px;
     font-family: Lato;
     font-style: normal;
     font-weight: bold;
@@ -117,7 +114,17 @@ export const OtpLog = styled.div`
     color: #3e3e3e;
   }
   & > div:nth-child(2) > div:nth-child(2) > p:nth-child(2) {
-    text-align: center;
+    font-family: Lato;
+    font-style: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 1.125em;
+    letter-spacing: 0.01em;
+    color: #727272;
+    height: 22px;
+  }
+  & > div:nth-child(2) > div:nth-child(2) > p:nth-child(3) {
     font-family: Lato;
     font-style: normal;
     margin-top: 0;
@@ -211,43 +218,5 @@ export const OtpLog = styled.div`
     color: #ababab;
     margin-top: 0;
     margin-bottom: 0;
-  }
-  & > div:nth-child(2) > div:nth-child(6) {
-    width: 440px;
-    margin: 24px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  & > div:nth-child(2) > div:nth-child(6) > :nth-child(1) > button {
-    width: 11.5em;
-    height: 56px;
-    border: none;
-    border-radius: 64px;
-    background-color: #2a2d36;
-    color: white;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    margin-right: 16px;
-  }
-  & > div:nth-child(2) > div:nth-child(6) > :nth-child(1) > button:hover {
-    cursor: pointer;
-  }
-  & > div:nth-child(2) > div:nth-child(6) > button:nth-child(2) {
-    width: 13.25em;
-    height: 56px;
-    border: none;
-    border-radius: 64px;
-    background-color: #3d5798;
-    color: white;
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-  }
-  & > div:nth-child(2) > div:nth-child(6) > button:nth-child(2):hover {
-    cursor: pointer;
   }
 `;

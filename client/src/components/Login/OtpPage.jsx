@@ -3,11 +3,27 @@ import signup from "../../images/signup.png";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useContext, useState } from "react";
+import { OtpContext } from "../../contexts/OtpContext";
 
 export const Otp = () => {
   const history = useHistory();
+  const [otp, setOtp] = useState("");
+  const { mynumber } = useContext(OtpContext);
+  const { final } = useContext(OtpContext);
+  const handleChange = (e) => {
+    setOtp(e.target.value);
+  };
   const handleLogin = () => {
-    history.push("/home");
+    if (otp === null || final === null) return;
+    final
+      .confirm(otp)
+      .then(() => {
+        history.replace("/home");
+      })
+      .catch((err) => {
+        alert("Wrong code");
+      });
   };
   return (
     <OtpLog>
@@ -36,35 +52,22 @@ export const Otp = () => {
         </div>
         <div>
           <p>Enter your 6-digit code.</p>
-          <p>We've sent your code tothe phone number.</p>
+          <p>We've sent your code to the phone number.</p>
           <p>
-            +919868551551 Didn't get it? <span>Resend Code</span>
+            {mynumber} Didn't get it?{" "}
+            <span style={{ color: "#2bc5b4" }}>Resend Code</span>
           </p>
         </div>
         <div>
-          <input
-            // onchange={handleNumber}
-            type="text"
-            placeholder="Enter Code"
-          />
+          <input onChange={handleChange} type="text" placeholder="Enter Code" />
           <button onClick={handleLogin}>Login</button>
         </div>
         <div>
           <p>
-            Select 'Continue' to give consent to JioSaavn's{" "}
+            Select 'Continue' to give consent to JioSaavn's
             <span>Terms of Service</span> and acknowledge that you have read and
-            understood the <span>Privacy Policy</span>. An SMS may be sent to
-            authenticate your account, and message and data rates may apply.
+            understood the <span>Privacy Policy</span>.
           </p>
-        </div>
-        <div>
-          <p>OR CONNECT WITH</p>
-        </div>
-        <div>
-          <Link to="/login">
-            <button>Email</button>
-          </Link>
-          <button>Facebook</button>
         </div>
       </div>
     </OtpLog>
