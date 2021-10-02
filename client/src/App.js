@@ -3,16 +3,20 @@ import { SignUp } from "./components/SignUp";
 import { LoginPage } from "./components/Login";
 import { MobileLogin } from "./components/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-import { Artists } from "./Artists";
-import { History } from "./History";
-import { LikedSongs } from "./LikedSongs";
-import { YourEpisodes } from "./YourEpisodes";
+// import { Artists } from "./Artists";
+// import { History } from "./History";
+// import { LikedSongs } from "./LikedSongs";
+// import { YourEpisodes } from "./YourEpisodes";
+import { Artists } from "./components/SongInfo/Artists";
+import { History } from "./components/SongInfo/History";
+import { LikedSongs } from "./components/SongInfo/LikedSongs";
+import { YourEpisodes } from "./components/SongInfo/YourEpisodes";
 
 function App() {
   const [song, setSong] = useState([]);
