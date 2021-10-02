@@ -152,6 +152,7 @@ export const OtpLog = styled.div`
     border: none;
     padding-left: 40px;
   }
+
   & > div:nth-child(2) > div:nth-child(3) > button {
     width: 100%;
     height: 52px;

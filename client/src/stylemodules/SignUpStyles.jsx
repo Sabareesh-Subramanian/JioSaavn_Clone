@@ -4,13 +4,12 @@ export const Register = styled.div`
   display: flex;
   & > div:nth-child(1) {
     background-color: #ba6053;
-    width: 45.625em;
-    min-height: 56.25em;
+    width: 53.44%;
   }
   & > div:nth-child(1) > div:nth-child(1) {
-    width: 13.45em;
-    margin-top: 2em;
-    margin-left: 1.5em;
+    width: 29.479%;
+    margin-top: 3.55%;
+    margin-left: 3.287%;
     margin-bottom: 0;
   }
   & > div:nth-child(1) > div:nth-child(1) > img {

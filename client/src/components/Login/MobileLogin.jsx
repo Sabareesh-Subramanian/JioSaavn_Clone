@@ -22,7 +22,7 @@ export const MobileLogin = () => {
         alert("code sent");
         setInterval(() => {
           history.push("/otp");
-        }, 1500);
+        }, 1000);
       })
       .catch((err) => {
         alert(err);
