@@ -3,7 +3,7 @@ import { SignUp } from "./components/SignUp";
 import { LoginPage } from "./components/Login";
 import { MobileLogin } from "./components/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
-
+import { Route, Switch } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
@@ -61,7 +61,6 @@ function App() {
           <Artists />
         </Route>
       </Switch>
-
     </div>
   );
 }

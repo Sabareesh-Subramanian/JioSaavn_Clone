@@ -20,7 +20,12 @@ import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
 import Playing from "./Playing";
 
+import Search from "../SearchEngine/Search";
+
+
+  
 export const Homepage = ({ song, loadingFlag }) => {
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
   const [showingProfile, setShowingProfile] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
@@ -138,6 +143,9 @@ export const Homepage = ({ song, loadingFlag }) => {
   const showLanguages = () => {
     setShowingLanguages(!showingLanguages);
   };
+  const toggleShowSearch = () => {
+    setShowSearchBar(!showSearchBar);
+  };
 
   const showProfile = () => {
     setShowingProfile(!showingProfile);
@@ -179,9 +187,10 @@ export const Homepage = ({ song, loadingFlag }) => {
         </div>
         {/* Search bar */}
         {/* <div> */}
-        <input className={styles["search-bar"]} placeholder={"Search"} />
+        <input  onClick={toggleShowSearch} className={styles["search-bar"]} placeholder={"Search"} />
         {/* <img className={styles["magnify-icon"]} src={magnify} alt="Search Icon" /> */}
         {/* </div> */}
+        {showSearchBar ? <Search /> : null}
         <div onClick={showLanguages} className={styles["languages-div"]}>
           <div className={styles["languages-text"]}>Music Languages</div>
           <Arrow
