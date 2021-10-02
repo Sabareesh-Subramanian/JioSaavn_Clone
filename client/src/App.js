@@ -3,11 +3,33 @@ import { SignUp } from "./components/SignUp";
 import { LoginPage } from "./components/Login";
 import { MobileLogin } from "./components/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
+
+
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+
 import { Artists } from "./Artists";
 import { History } from "./History";
 import { LikedSongs } from "./LikedSongs";
 import { YourEpisodes } from "./YourEpisodes";
+
 function App() {
+  const [song, setSong] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const NewSong = async () => {
+    setIsLoading(true);
+    let res = await axios.get(
+      "https://apg-saavn-api.herokuapp.com/result/?q=thanimaye/"
+    );
+    setSong([...song, ...res.data]);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    NewSong();
+  }, []);
+
   return (
     <div>
       <Switch>
@@ -24,7 +46,7 @@ function App() {
           <MobileLogin />
         </Route>
         <Route path="/home">
-          <Homepage />
+          <Homepage song={song} loadingFlag={isLoading} />
         </Route>
         <Route path="/history">
           <History />
@@ -39,6 +61,7 @@ function App() {
           <Artists />
         </Route>
       </Switch>
+
     </div>
   );
 }
