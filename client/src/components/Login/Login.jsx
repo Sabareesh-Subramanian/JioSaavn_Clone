@@ -1,6 +1,6 @@
-import { Login } from "../stylemodules/LoginStyles";
-import signup from "../images/signup.png";
-import logo from "../images/logo.png";
+import { Login } from "../../stylemodules/LoginStyles";
+import signup from "../../images/signup.png";
+import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";

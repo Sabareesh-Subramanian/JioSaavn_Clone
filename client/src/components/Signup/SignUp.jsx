@@ -1,16 +1,18 @@
-import { Register } from "../stylemodules/SignUpStyles";
-import signup from "../images/signup.png";
-import logo from "../images/logo.png";
+import { Register } from "../../stylemodules/SignUpStyles";
+import signup from "../../images/signup.png";
+import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-import styles from "../stylemodules/Style.module.css";
+import styles from "../../stylemodules/Style.module.css";
+import { useHistory } from "react-router-dom";
 
 export const SignUp = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
   const [confirm, setConfirm] = useState("");
   const [error, setError] = useState(false);
+  const history = useHistory();
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -30,6 +32,9 @@ export const SignUp = () => {
       setPass("");
       setConfirm("");
       setError(false);
+      setInterval(() => {
+        history.push("/home");
+      }, 500);
     } else {
       setError(true);
     }

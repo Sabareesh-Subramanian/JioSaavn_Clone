@@ -1,16 +1,32 @@
-import { MobLog } from "../stylemodules/MobileLoginStyle";
-import signup from "../images/signup.png";
-import logo from "../images/logo.png";
+import { MobLog } from "../../stylemodules/MobileLoginStyle";
+import signup from "../../images/signup.png";
+import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { firebase, auth } from "../../firebase";
+import { useContext } from "react";
+import { OtpContext } from "../../contexts/OtpContext";
 
 export const MobileLogin = () => {
-  const [number, setNumber] = useState("");
-  const handleNumber = (e) => {
-    setNumber(e.target.value);
-  };
+  const { mynumber } = useContext(OtpContext);
+  const { handleNumber } = useContext(OtpContext);
+  const { handleFinal } = useContext(OtpContext);
+  const history = useHistory();
   const handleLogin = () => {
-    console.log(number);
+    if (mynumber === "" || mynumber.length < 10) return;
+    let verify = new firebase.auth.RecaptchaVerifier("recaptcha-container");
+    auth
+      .signInWithPhoneNumber(mynumber, verify)
+      .then((result) => {
+        handleFinal(result);
+        alert("code sent");
+        setInterval(() => {
+          history.push("/otp");
+        }, 1500);
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
   return (
     <MobLog>
@@ -43,10 +59,13 @@ export const MobileLogin = () => {
         </div>
         <div>
           <input
-            onchange={handleNumber}
+            onChange={(e) => {
+              handleNumber(e);
+            }}
             type="text"
             placeholder="Enter your mobile number"
           />
+          <div id="recaptcha-container"></div>
           <button onClick={handleLogin}>Continue</button>
         </div>
         <div>
