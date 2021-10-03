@@ -4,29 +4,30 @@ export const Register = styled.div`
   display: flex;
   & > div:nth-child(1) {
     background-color: #ba6053;
-    width: 53.44%;
+    width: 45.625em;
+    min-height: 56.25em;
   }
   & > div:nth-child(1) > div:nth-child(1) {
-    width: 29.479%;
-    margin-top: 3.55%;
-    margin-left: 3.287%;
+    width: 13.45em;
+    margin-top: 2em;
+    margin-left: 1.5em;
     margin-bottom: 0;
   }
   & > div:nth-child(1) > div:nth-child(1) > img {
     width: 100%;
   }
   & > div:nth-child(1) > div:nth-child(2) {
-    width: 67.945%;
-    margin: 16.22% auto;
+    width: 31em;
+    margin: 4.79625em auto;
     margin-bottom: 0;
   }
   & > div:nth-child(1) > div:nth-child(2) > img {
     width: 100%;
   }
   & > div:nth-child(1) > div:nth-child(3) {
-    width: 50%;
+    width: 17.25em;
     margin: auto;
-    margin-top: 4.44%;
+    margin-top: 40px;
     text-align: center;
   }
   & > div:nth-child(1) > div:nth-child(3) > p:nth-child(1) {
@@ -39,9 +40,9 @@ export const Register = styled.div`
     color: #ffffff;
   }
   & > div:nth-child(1) > div:nth-child(4) {
-    width: 50%;
+    width: 17.25em;
     margin: auto;
-    margin-top: 1.33%;
+    margin-top: 12px;
     text-align: center;
   }
   & > div:nth-child(1) > div:nth-child(4) > p:nth-child(1) {

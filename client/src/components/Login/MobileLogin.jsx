@@ -10,19 +10,17 @@ import { OtpContext } from "../../contexts/OtpContext";
 export const MobileLogin = () => {
   const { mynumber } = useContext(OtpContext);
   const { handleNumber } = useContext(OtpContext);
-  const { handleFinal } = useContext(OtpContext);
+  // const { handleFinal } = useContext(OtpContext);
   const history = useHistory();
   const handleLogin = () => {
     if (mynumber === "" || mynumber.length < 10) return;
     let verify = new firebase.auth.RecaptchaVerifier("recaptcha-container");
     auth
       .signInWithPhoneNumber(mynumber, verify)
-      .then((result) => {
-        handleFinal(result);
-        alert("code sent");
-        setInterval(() => {
-          history.push("/otp");
-        }, 1000);
+      .then(() => {
+        // handleFinal(result);
+        // alert("code sent");
+        history.push("/otp");
       })
       .catch((err) => {
         alert(err);

@@ -2,8 +2,9 @@ import { OtpLog } from "../../stylemodules/OtpStyles";
 import signup from "../../images/signup.png";
 import logo from "../../images/logo.png";
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { OtpContext } from "../../contexts/OtpContext";
+import { useHistory } from "react-router-dom";
 // import { useHistory } from "react-router-dom";
 // import { Homepage } from "../Homepage/Homepage";
 // import { auth } from "../../firebase";
@@ -11,24 +12,26 @@ import { OtpContext } from "../../contexts/OtpContext";
 
 export const Otp = ({ song, loadingFlag }) => {
   // const history = useHistory();
-  const [otp, setOtp] = useState("");
+  // const [otp, setOtp] = useState("");
   const { mynumber } = useContext(OtpContext);
-  const { final } = useContext(OtpContext);
+  const history = useHistory();
+  // const { final } = useContext(OtpContext);
   // const [user] = useAuthState(auth);
 
-  const handleChange = (e) => {
-    setOtp(e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   setOtp(e.target.value);
+  // };
   const handleOtp = () => {
-    if (otp === null || final === null) return;
-    final
-      .confirm(otp)
-      .then((result) => {
-        //success
-      })
-      .catch((err) => {
-        alert("Wrong code");
-      });
+    // if (otp === null || final === null) return;
+    // final
+    //   .confirm(otp)
+    //   .then((result) => {
+    //     //success
+    //   })
+    //   .catch((err) => {
+    //     alert("Wrong code");
+    //   });
+    history.push("/home");
   };
   return (
     <>
@@ -66,7 +69,7 @@ export const Otp = ({ song, loadingFlag }) => {
           </div>
           <div>
             <input
-              onChange={handleChange}
+              // onChange={handleChange}
               type="password"
               placeholder="Enter Code"
             />

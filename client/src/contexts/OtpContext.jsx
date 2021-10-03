@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const OtpContext = createContext({
   mynumber: "",
-  final: "",
+  // final: "",
   loggedIn: "",
   setLoggedIn: () => {},
   handleFinal: () => {},
@@ -12,14 +12,14 @@ export const OtpContext = createContext({
 
 export const OtpValidation = ({ children }) => {
   const [mynumber, setNumber] = useState("");
-  const [final, setFinal] = useState("");
+  // const [final, setFinal] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const handleNumber = (e) => {
     setNumber(e.target.value);
   };
-  const handleFinal = (result) => {
-    setFinal(result);
-  };
+  // const handleFinal = (result) => {
+  //   setFinal(result);
+  // };
   const handleLoggedIn = (set) => {
     setLoggedIn(set);
   };
@@ -27,10 +27,10 @@ export const OtpValidation = ({ children }) => {
     <OtpContext.Provider
       value={{
         mynumber,
-        final,
+        // final,
         loggedIn,
         handleLoggedIn,
-        handleFinal,
+        // handleFinal,
         handleNumber,
       }}
     >
