@@ -95,12 +95,6 @@
   max-width: 1.66%;
 }
 
-<<<<<<< HEAD
-/* .down-arrow {
-  transform: rotate(180deg); 
-} */
-
-=======
 .avatar {
   width: 35px;
   /* height: 43.33px; */
@@ -383,4 +377,13 @@
   vertical-align: middle;
   margin: auto;
 }
->>>>>>> 737de5a26a0b26d557ed5f9431f3be83cc6056ba
+.search-input-box{
+  height: 70%;
+  width: 92%;
+  margin-top: 0.5%;
+  color: black !important;
+  background: #ffffff;
+  margin-left: 10px;
+  border: 0px;
+  outline: none;
+}

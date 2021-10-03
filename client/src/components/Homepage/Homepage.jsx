@@ -22,8 +22,6 @@ import Playing from "./Playing";
 
 import Search from "../SearchEngine/Search";
 
-
-  
 export const Homepage = ({ song, loadingFlag }) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
@@ -52,6 +50,7 @@ export const Homepage = ({ song, loadingFlag }) => {
 
   const Arrow = styled.img`
     transform: ${(props) => (props.flag ? "rotate(180deg)" : "rotate(0deg)")};
+    display:${(props)=>(props.showing ? "none":"block")}
   `;
 
   const Languages = styled.div`
@@ -139,6 +138,18 @@ export const Homepage = ({ song, loadingFlag }) => {
     padding: 8% 15%;
     cursor: pointer;
   `;
+  const SearchDropBox = styled.div`
+    background: #ffffff;
+    position: absolute;
+    border: none;
+    box-shadow: 0px 2px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    height: 318px;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 2%;
+    display: ${showSearchBar ? "block" : "none"};
+  `;
 
   const showLanguages = () => {
     setShowingLanguages(!showingLanguages);
@@ -187,10 +198,17 @@ export const Homepage = ({ song, loadingFlag }) => {
         </div>
         {/* Search bar */}
         {/* <div> */}
-        <input  onClick={toggleShowSearch} className={styles["search-bar"]} placeholder={"Search"} />
+        <input
+          onClick={toggleShowSearch}
+          className={styles["search-bar"]}
+          placeholder={"Search"}
+        />
         {/* <img className={styles["magnify-icon"]} src={magnify} alt="Search Icon" /> */}
         {/* </div> */}
-        {showSearchBar ? <Search /> : null}
+        <SearchDropBox>
+          <Search toggleShowSearch={toggleShowSearch} />
+        </SearchDropBox>
+        {/* {showSearchBar ? <Search /> : null} */}
         <div onClick={showLanguages} className={styles["languages-div"]}>
           <div className={styles["languages-text"]}>Music Languages</div>
           <Arrow
@@ -198,6 +216,7 @@ export const Homepage = ({ song, loadingFlag }) => {
             className={styles["down-arrow"]}
             src={downarrow}
             alt="dropdown arrow"
+            showing = {showSearchBar}
           />
           {/* Music Languages */}
         </div>

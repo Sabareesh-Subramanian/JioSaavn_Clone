@@ -1,18 +1,18 @@
 import { Route, Switch } from "react-router-dom";
-import { SignUp } from "./components/SignUp";
-import { LoginPage } from "./components/Login";
-import { MobileLogin } from "./components/MobileLogin";
+// import { SignUp } from "./components/SignUp";
+// import { LoginPage } from "./components/Login";
+// import { MobileLogin } from "./components/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
-import { Route, Switch } from "react-router-dom";
+//import { Route, Switch } from "react-router-dom";
 
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-import { Artists } from "./Artists";
-import { History } from "./History";
-import { LikedSongs } from "./LikedSongs";
-import { YourEpisodes } from "./YourEpisodes";
+// import { Artists } from "./Artists";
+// import { History } from "./History";
+// import { LikedSongs } from "./LikedSongs";
+// import { YourEpisodes } from "./YourEpisodes";
 
 function App() {
   const [song, setSong] = useState([]);
@@ -33,7 +33,7 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
+        {/* <Route exact path="/">
           <SignUp />
         </Route>
         <Route path="/signup">
@@ -44,11 +44,11 @@ function App() {
         </Route>
         <Route path="/mobile">
           <MobileLogin />
-        </Route>
-        <Route path="/home">
+        </Route> */}
+        <Route path="/">
           <Homepage song={song} loadingFlag={isLoading} />
         </Route>
-        <Route path="/history">
+        {/* <Route path="/history">
           <History />
         </Route>
         <Route path="/likedsongs">
@@ -59,7 +59,7 @@ function App() {
         </Route>
         <Route path="/artists">
           <Artists />
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
