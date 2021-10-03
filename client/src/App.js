@@ -3,23 +3,16 @@ import { SignUp } from "./components/Signup/SignUp";
 import { LoginPage } from "./components/Login/Login";
 import { MobileLogin } from "./components/Login/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
-
 import { Otp } from "./components/Login/OtpPage";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-
 import { Artists } from "./components/SongInfo/Artists";
 import { History } from "./components/SongInfo/History";
 import { LikedSongs } from "./components/SongInfo/LikedSongs";
 import { YourEpisodes } from "./components/SongInfo/YourEpisodes";
-
-// import { SongInfo } from "./components/SongInfo/SongInfo";
-
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-
-
 function App() {
   const [song, setSong] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +32,6 @@ function App() {
 
   return (
     <div>
-      {/* <SongInfo /> */}
       <Switch>
         <Route exact path="/">
           <Homepage song={song} loadingFlag={isLoading} />
@@ -60,7 +52,6 @@ function App() {
         <Route path="/otp">
           {/* <Otp /> */}
           {user ? <Homepage song={song} loadingFlag={isLoading} /> : <Otp />}
-
         </Route>
         <Route path="/history">
           <History />

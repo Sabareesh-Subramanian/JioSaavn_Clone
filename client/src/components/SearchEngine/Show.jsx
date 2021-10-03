@@ -14,7 +14,7 @@ export default function Show({ data, loading }) {
     gap: 2%;
     width: 80%;
     margin: ${!loading ? "0%" : "2%"} auto;
-    grid-row-gap: ${!loading ? "50px": "15px"};
+    grid-row-gap: 15px;
   `;
   const CoverImg = styled.img`
     width: 41px;
@@ -67,7 +67,7 @@ export default function Show({ data, loading }) {
                   color: "#B9B9B9",
                 }}
               >
-                {el.year} {el.language} {!loading ? "Album": null}
+                {el.year} {el.language} {!loading ? "Album" : null}
               </span>
             </SongName>
           </SongContainer>

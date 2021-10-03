@@ -2,12 +2,9 @@ import styles from "../../stylemodules/Homepage.module.css";
 import jiologo from "../../../src/icons/jiologo.svg";
 import downarrow from "../../../src/icons/downarrow.svg";
 import styled from "styled-components";
-
 import { useState, useEffect, useRef } from "react";
-
 import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
-
+import { useContext } from "react";
 import avatar from "../../../src/icons/avatar.svg";
 import microphone from "../../../src/icons/microphone.svg";
 import musicbox from "../../../src/icons/musicbox.svg";
@@ -19,16 +16,12 @@ import previous from "../../../src/icons/previous.svg";
 import next from "../../../src/icons/next.svg";
 import play from "../../../src/icons/play.svg";
 import pause from "../../icons/pause.svg";
-
 import shuffle from "../../../src/icons/shuffle.svg";
 import moredetails from "../../../src/icons/moredetails.svg";
 import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
 import Playing from "./Playing";
-
-import { Link } from "react-router-dom";
-
-
+// import { Link } from "react-router-dom";
 import Search from "../SearchEngine/Search";
 import { OtpContext } from "../../contexts/OtpContext";
 
@@ -71,7 +64,7 @@ export const Homepage = ({ song, loadingFlag }) => {
 
   const Arrow = styled.img`
     transform: ${(props) => (props.flag ? "rotate(180deg)" : "rotate(0deg)")};
-    display:${(props)=>(props.showing ? "none":"block")}
+    display: ${(props) => (props.showing ? "none" : "block")};
   `;
 
   const Languages = styled.div`
@@ -253,7 +246,7 @@ export const Homepage = ({ song, loadingFlag }) => {
             className={styles["down-arrow"]}
             src={downarrow}
             alt="dropdown arrow"
-            showing = {showSearchBar}
+            showing={showSearchBar}
           />
           {/* Music Languages */}
         </div>
@@ -275,6 +268,7 @@ export const Homepage = ({ song, loadingFlag }) => {
             className={styles["down-arrow"]}
             src={downarrow}
             alt="dropdown arrow"
+            showing={showSearchBar}
           />
         </Logout>
       </div>
