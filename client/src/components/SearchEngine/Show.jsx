@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SSHeading from "./SSHeading";
-export default function Show({ data, loading }) {
-  console.log(data);
+// import { useContext } from "react";
+// import { SongContext } from "../../contexts/SongContext";
+export default function Show({ data, loading, toggleShowSearch, ChangeSong }) {
+  // console.log(data);
+  // const { playingSong } = useContext(SongContext);
+  // const { SetNewSong } = useContext(SongContext);
 
   const SongContainer = styled.div`
     height: 40px;
@@ -19,8 +23,8 @@ export default function Show({ data, loading }) {
   const CoverImg = styled.img`
     width: 41px;
     height: 37px;
-
-    borderradius: 4px;
+    cursor: pointer;
+    border-radius: 4px;
     float: left;
     margin-right: 10px;
     border-radius: 4px;
@@ -37,9 +41,15 @@ export default function Show({ data, loading }) {
       <Grid>
         {data.map((el) => (
           <SongContainer>
-            <Link to="/player">
-              <CoverImg src={el.image}></CoverImg>{" "}
-            </Link>
+            {/* <Link to="/player"> */}
+            <CoverImg
+              onClick={() => {
+                toggleShowSearch();
+                ChangeSong(el);
+              }}
+              src={el.image}
+            ></CoverImg>{" "}
+            {/* </Link> */}
             <SongName>
               <span
                 style={{

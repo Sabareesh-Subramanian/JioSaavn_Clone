@@ -22,12 +22,24 @@ function App() {
     let res = await axios.get(
       "https://apg-saavn-api.herokuapp.com/result/?q=thanimaye/"
     );
+    // console.log("res:", res.data);
     setSong([...song, ...res.data]);
+  };
+
+  const NewSong1 = async () => {
+    let res1 = await axios.get(
+      "https://apg-saavn-api.herokuapp.com/result/?q=believer/"
+    );
+    setSong([...song, ...res1.data]);
+    // console.log("res1:", res1.data);
     setIsLoading(false);
   };
 
   useEffect(() => {
     NewSong();
+    setTimeout(() => {
+      NewSong1();
+    }, 1500);
   }, []);
 
   return (
