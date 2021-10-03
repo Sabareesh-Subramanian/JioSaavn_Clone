@@ -1,9 +1,13 @@
 import styles from "../../stylemodules/Homepage.module.css";
 import jiologo from "../../../src/icons/jiologo.svg";
 import downarrow from "../../../src/icons/downarrow.svg";
-// import magnify from "../../../src/icons/magnify.svg";
 import styled from "styled-components";
+
 import { useState, useEffect, useRef } from "react";
+
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+
 import avatar from "../../../src/icons/avatar.svg";
 import microphone from "../../../src/icons/microphone.svg";
 import musicbox from "../../../src/icons/musicbox.svg";
@@ -15,22 +19,27 @@ import previous from "../../../src/icons/previous.svg";
 import next from "../../../src/icons/next.svg";
 import play from "../../../src/icons/play.svg";
 import pause from "../../icons/pause.svg";
+
 import shuffle from "../../../src/icons/shuffle.svg";
 import moredetails from "../../../src/icons/moredetails.svg";
 import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
 import Playing from "./Playing";
+
 import { Link } from "react-router-dom";
 
+
 import Search from "../SearchEngine/Search";
+import { OtpContext } from "../../contexts/OtpContext";
 
 export const Homepage = ({ song, loadingFlag }) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
   const [showingProfile, setShowingProfile] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songlink, setSongLink] = useState("");
+  const { loggedIn } = useContext(OtpContext);
+  const { handleLoggedIn } = useContext(OtpContext);
 
   const [songPlaying, setSongPlaying] = useState(false);
   const audioEl = useRef(null);
@@ -162,12 +171,12 @@ export const Homepage = ({ song, loadingFlag }) => {
   };
 
   const LoggingOut = () => {
-    setLoggedIn(!loggedIn);
+    handleLoggedIn(!loggedIn);
     setShowingProfile(false);
   };
 
   const LoggingIn = () => {
-    setLoggedIn(!loggedIn);
+    handleLoggedIn(!loggedIn);
   };
 
   const ModifyPlay = () => {
@@ -232,10 +241,15 @@ export const Homepage = ({ song, loadingFlag }) => {
           {/* Music Languages */}
         </div>
         <Login loggedin={loggedIn} onClick={LoggingIn}>
-          Login
+          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+            Login
+          </Link>
+          {/* Login */}
         </Login>
         <Signup loggedin={loggedIn} onClick={LoggingIn}>
-          Sign Up
+          <Link style={{ textDecoration: "none", color: "black" }} to="/signup">
+            Sign Up
+          </Link>
         </Signup>
         <Logout onClick={showProfile} loggedin={loggedIn}>
           <img className={styles["avatar"]} src={avatar} alt="avatar"></img>
