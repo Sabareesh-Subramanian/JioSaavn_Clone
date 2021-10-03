@@ -1,584 +1,574 @@
-* {
-    background-color: #F6F6F6;
-}
-
 
 .navDiv {
-    width: 85em;
-    height: 5em;
-    left: 0em;
-    top: 0em;
-    background-color: #F6F6F6;
-    display: flex;
-    border-bottom: 1px solid #E9E9E9;
+  width: 85em;
+  height: 5em;
+  left: 0em;
+  top: 0em;
+  background-color: #f6f6f6;
+  display: flex;
+  border-bottom: 1px solid #e9e9e9;
 }
 
 .navImg1Div {
-    width: 9em;
-    height: 1.8em;
-    margin-top: 1.6em;
-    margin-left: 3em;
+  width: 9em;
+  height: 1.8em;
+  margin-top: 1.6em;
+  margin-left: 3em;
 }
 
 .navTextDiv {
-    display: flex;
-    gap: 9%;
-    width: 11.6em;
-    margin-left: 5em;
-    margin-top: 1.9em;
-    margin-bottom: 2.5em;
- }
+  display: flex;
+  gap: 9%;
+  width: 11.6em;
+  margin-left: 5em;
+  margin-top: 1.9em;
+  margin-bottom: 2.5em;
+}
 .navTextDiv span {
-    width: 3.75em;
-    height: 1.1875em;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19.2px;
-    text-align: center;
+  width: 3.75em;
+  height: 1.1875em;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.2px;
+  text-align: center;
 }
 
 .navInputDiv {
-    width: 30.75em;
-    height: 2.75em;
-    margin-top: 1.5em;
-    margin-left: 5em;
-    border-radius: 20px;
-    border: 1px solid #DADADA;
-    outline: none;
-    background-color: #FFFFFF;
+  width: 30.75em;
+  height: 2.75em;
+  margin-top: 1.5em;
+  margin-left: 5em;
+  border-radius: 20px;
+  border: 1px solid #dadada;
+  outline: none;
+  background-color: #ffffff;
 }
 
 .navInputDiv::placeholder {
-    padding-left: 6%;
+  padding-left: 6%;
 }
 
 .navTextDiv1 {
-    width: 7.875em;
-    height: 1.1875em;
-    margin-left: 5.875em;
-    line-height: 6.2px;
-    margin-top: 2.25em;
-    margin-bottom: 2.4375em;
+  width: 7.875em;
+  height: 1.1875em;
+  margin-left: 5.875em;
+  line-height: 6.2px;
+  margin-top: 2.25em;
+  margin-bottom: 2.4375em;
 }
-.navImg2Div{
-    width: 2em;
-    height: 2em;
-    margin-top: 1.520625em;
-    margin-bottom: 1.645625em;
-    margin-left: 7.02625em;
+.navImg2Div {
+  width: 2em;
+  height: 2em;
+  margin-top: 1.520625em;
+  margin-bottom: 1.645625em;
+  margin-left: 7.02625em;
 }
-
 
 /*Side Bar Css*/
 
-.sideBarDiv {    
-    position: absolute;
-    width: 14.875em;
-    height: 24.375em;
-    margin-right: 75.125em;
-    margin-bottom: 26.0625em;  
+.sideBarDiv {
+  position: absolute;
+  width: 14.875em;
+  height: 24.375em;
+  margin-right: 75.125em;
+  margin-bottom: 26.0625em;
 }
 .sideBarDiv1 {
-    position: absolute;
-    width: 5em;
-    height: 1.5em;
-    margin-left: 2.486em;
-    margin-top: 2em;
+  position: absolute;
+  width: 5em;
+  height: 1.5em;
+  margin-left: 2.486em;
+  margin-top: 2em;
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
-    text-transform: uppercase;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
 
-    color: #828DA8;
+  color: #828da8;
 }
 .sideImgDiv1 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 2%;
 
-    position: absolute;
-    width: 5.4em;
-    height: 1.5em;
-    margin-left: 3.1em;
-    margin-top: 5.2em;
-
+  position: absolute;
+  width: 5.4em;
+  height: 1.5em;
+  margin-left: 3.1em;
+  margin-top: 5.2em;
 }
 
-.sideImgDiv1 > img  {
-    width: 1.263125em;
-    height: 1.243125em;
-    position: absolute;
-    margin-left: 7.89%;
-    margin-right: 7.9%;
-    margin-top: 6%;
-    margin-bottom: 8.57%;
+.sideImgDiv1 > img {
+  width: 1.263125em;
+  height: 1.243125em;
+  position: absolute;
+  margin-left: 7.89%;
+  margin-right: 7.9%;
+  margin-top: 6%;
+  margin-bottom: 8.57%;
 
-    /* background-color: #545454; */
+  /* background-color: #545454; */
 }
 
-.sideImgDiv1 div{
-    position: static;
-    width: 5.235625em;
-    height: 1.5em;
-    margin-left: 2.4375em;
-    margin-top: 0em;
+.sideImgDiv1 div {
+  position: static;
+  width: 5.235625em;
+  height: 1.5em;
+  margin-left: 2.4375em;
+  margin-top: 0em;
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
-    
-    font-weight: 400;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
 
-    letter-spacing: 0em;
-    text-align: left;
+  font-weight: 400;
 
-    color: #545454;
+  letter-spacing: 0em;
+  text-align: left;
+
+
+  color: #545454;
 }
 
 .sideImgDiv2 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
 
-    position: absolute;
-    width: 9em;
-    height: 1.5em;
-    margin-left: 3.1em;
-    margin-top: 8em;
+  position: absolute;
+  width: 9em;
+  height: 1.5em;
+  margin-left: 3.1em;
+  margin-top: 8em;
 }
 
 .sideImgDiv2 > img {
-    position: absolute;
-    margin-left: 6%;
-    margin-right: 12.5%;
-    margin-top: 8.9%;
-    margin-bottom: 12.5%;
+  position: absolute;
+  margin-left: 6%;
+  margin-right: 12.5%;
+  margin-top: 8.9%;
+  margin-bottom: 12.5%;
 
-    width:  1.125em;
-    height: 1.25em;
+  width: 1.125em;
+  height: 1.25em;
 }
 
 .sideImgDiv2 div {
-    position: static;
-    width: 6.5em;
-    height: 1.5em;
-    margin-left: 2.4375em;;
-    margin-top: 0px;
+  position: static;
+  width: 6.5em;
+  height: 1.5em;
+  margin-left: 2.4375em;
+  margin-top: 0px;
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
 
+  color: #545454;
 
-    color: #545454;
+  /* Inside Auto Layout */
 
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0em 1;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0em 1;
 }
 
 .sideImgDiv3 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
 
-    position: absolute;
-    width: 9em;
-    height: 1.5em;
-    margin-left: 3.1em;
-    margin-top: 10.9125em;
+  position: absolute;
+  width: 9em;
+  height: 1.5em;
+  margin-left: 3.1em;
+  margin-top: 10.9125em;
 }
 
 .sideImgDiv3 > img {
-    position: absolute;
-    margin-left: 6%;
-    margin-right: 12.5%;
-    margin-top: 8.9%;
-    margin-bottom: 12.5%;
+  position: absolute;
+  margin-left: 6%;
+  margin-right: 12.5%;
+  margin-top: 8.9%;
+  margin-bottom: 12.5%;
 
-    width:  1.125em;
-    height: 1.25em;
-
+  width: 1.125em;
+  height: 1.25em;
 }
 
 .sideImgDiv3 div {
-    position: static;
-    width: 8.25em;
-    height: 1.5em;
-    margin-left: 2.4375em;
-    margin-top: 0em;
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
+  position: static;
+  width: 8.25em;
+  height: 1.5em;
+  margin-left: 2.4375em;
+  margin-top: 0em;
 
 
-    color: #545454;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
 
-    /* Inside Auto Layout */
+  color: #545454;
 
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 1em;
+  /* Inside Auto Layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 1em;
 }
 
 .sideImgDiv4 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
 
-    position: absolute;
-    width: 6.0625em;
-    height: 1.5em;
-    margin-left: 3.225em;
-    margin-top: 13.8125em;
+  position: absolute;
+  width: 6.0625em;
+  height: 1.5em;
+  margin-left: 3.225em;
+  margin-top: 13.8125em;
 }
 .sideImgDiv4 > img {
-    position: absolute;
-    margin-left: 10%;
-    margin-right: 16.67%;
-    margin-top: 2.5%;
-    margin-bottom: 4.17%;
-    width: 0.9375em;
-    height: 1.25em;
-    
+  position: absolute;
+  margin-left: 10%;
+  margin-right: 16.67%;
+  margin-top: 2.5%;
+  margin-bottom: 4.17%;
+  width: 0.9375em;
+  height: 1.25em;
 }
 .sideImgDiv4 div {
-    position: static;
-    width: 3.625em;
-    height: 1.5em;
-    margin-left: 2.4357em;
-    margin-top: 0px;
+  position: static;
+  width: 3.625em;
+  height: 1.5em;
+  margin-left: 2.4357em;
+  margin-top: 0px;
 
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 24px;
-    /* identical to box height */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  /* identical to box height */
 
 
-    color: #545454;
+  color: #545454;
 }
 
 /*Side Button*/
 
 .sideButtonDiv {
-    position: absolute;
-    width: 13em;
-    height: 3.1875em;
-    margin-left: 2.940625em;
-    margin-top: 18.5625em;
-    cursor: pointer;
-    background-color: #F6F6F6;
+  position: absolute;
+  width: 13em;
+  height: 3.1875em;
+  margin-left: 2.940625em;
+  margin-top: 18.5625em;
+  cursor: pointer;
+  background-color: #f6f6f6;
 }
 
 .sideButtonDiv1 {
-    display: flex;
-    width: 13em;
-    height: 3.1875em;
-    position: absolute;
-    margin-left: 0%;
-    margin-right: 0%;
-    margin-top: 0%;
-    margin-bottom: 0%;
+  display: flex;
+  width: 13em;
+  height: 3.1875em;
+  position: absolute;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
 
-    border: 1.11443px solid #A7E3DC;
-    border-radius: 44.577px;
-    cursor: pointer;
+  border: 1.11443px solid #a7e3dc;
+  border-radius: 44.577px;
+  cursor: pointer;
 }
 
 .sideButtonDiv1 > img {
-    position: absolute;
-    width: 0.979375em;
-    height: 0.8925em;
-    margin-left: 1.04875em;
-    /* margin-right: 76.79%; */
-    margin-top: 1.1475em;
-    /* margin-bottom: 36%; */
-    /* border: 1px solid black; */
+  position: absolute;
+  width: 0.979375em;
+  height: 0.8925em;
+  margin-left: 1.04875em;
+  /* margin-right: 76.79%; */
+  margin-top: 1.1475em;
+  /* margin-bottom: 36%; */
+  /* border: 1px solid black; */
 }
 .sideButtonDiv1 div {
-    position: absolute;
-    width: 6.155em;
-    height: 1.275em;
-    margin-top: 0.42625em;
-    margin-right: 16.67%;
-    margin-left: 1.809375em;
-    margin-bottom: 30%;
+  position: absolute;
+  width: 6.155em;
+  height: 1.275em;
+  margin-top: 0.42625em;
+  margin-right: 16.67%;
+  margin-left: 1.809375em;
+  margin-bottom: 30%;
 
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17.8308px;
-    line-height: 22px;
-    /* or 125% */
-    /* border: 1px solid black; */
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17.8308px;
+  line-height: 22px;
+  /* or 125% */
+  /* border: 1px solid black; */
 
-    color: #2FC6B8;
+
+  color: #2fc6b8;
 }
 
 /* History page css */
 
 .headDiv {
-    position: absolute;
-    width: 9.8125em;
-    height: 3.625em;
-    margin-left: 6.8405em;
-    margin-top: 0.6075em;
-
-    /* H1-Semibold 48 */
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 58px;
-/* identical to box height */
+  position: absolute;
+  width: 9.8125em;
+  height: 3.625em;
+  margin-left: 6.8405em;
+  margin-top: 0.6075em;
 
 
-/* H1 & Login mobile button */
+  /* H1-Semibold 48 */
 
-color: #2A2D36;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  /* identical to box height */
+
+  /* H1 & Login mobile button */
+
+
+  color: #2a2d36;
 }
 
 .subTextDiv1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 0.25em 0.125em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.25em 0.125em;
 
-    position: absolute;
-    width: 6.75em;
-    height: 2.3125em;
-    margin-left: 20em;
-    margin-top: 7.8625em;
+  position: absolute;
+  width: 6.75em;
+  height: 2.3125em;
+  margin-left: 20em;
+  margin-top: 7.8625em;
 }
 
 .subTextDivin1 > div {
-    position: static;
-    width: 6.25em;
-    height: 1.1875em;
-    margin-left: 0.25em;
-    margin-top: 0.0125em;
+  position: static;
+  width: 6.25em;
+  height: 1.1875em;
+  margin-left: 0.25em;
+  margin-top: 0.0125em;
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 
-    color: #2A2D36;
+  color: #2a2d36;
 }
 .lineDiv {
-    position: static;
-    width: 6.25em;
-    height: 0em;
-    margin-left: 0.25em!important;
-    margin-top: 2.375em;
+  position: static;
+  width: 6.25em;
+  height: 0em;
+  margin-left: 0.25em !important;
+  margin-top: 2.375em;
 
-    border: 2px solid #2A2D36;
-    box-sizing: border-box;
+  border: 2px solid #2a2d36;
+  box-sizing: border-box;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 
 .subTextDiv2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 0.25em 0.125em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.25em 0.125em;
 
-    position: absolute;
-    width: 5.75em;
-    height: 2.3125em;
-    margin-left: 29.5em;
-    margin-top: 6.8625em;
+  position: absolute;
+  width: 5.75em;
+  height: 2.3125em;
+  margin-left: 29.5em;
+  margin-top: 6.8625em;
 }
 .subTextDivin2 > div {
-    position: static;
-    width: 5.25em;
-    height: 1.1875em;
-    margin-left: 0.3125em;
-    margin-top: 0.25em;
+  position: static;
+  width: 5.25em;
+  height: 1.1875em;
+  margin-left: 0.3125em;
+  margin-top: 0.25em;
 
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 
-    color: #2A2D36;
+  color: #2a2d36;
 
+  /* Inside Auto Layout */
 
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 .lineDiv1 {
-    position: static;
-    width: 5.25em;
-    height: 0em;
-    margin-left: 0.25em!important;
-    margin-top: 2.375em;
+  position: static;
+  width: 5.25em;
+  height: 0em;
+  margin-left: 0.25em !important;
+  margin-top: 2.375em;
 
-    border: 2px solid #2A2D36;
-    box-sizing: border-box;
+  border: 2px solid #2a2d36;
+  box-sizing: border-box;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 .subTextDiv3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 0.25em 0.125em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.25em 0.125em;
 
-    position: absolute;
-    width: 7.625em;
-    height: 2.3125em;
-    margin-left: 37.75em;
-    margin-top: 6.8625em;
+  position: absolute;
+  width: 7.625em;
+  height: 2.3125em;
+  margin-left: 37.75em;
+  margin-top: 6.8625em;
 }
 
 .subTextDivin3 > div {
-    position: static;
-    width: 7.125em;
-    height: 1.1875em;
-    margin-left: 0.25em;
-    margin-top: 0.3125em;
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    
-    color: #2A2D36;
-    
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  position: static;
+  width: 7.125em;
+  height: 1.1875em;
+  margin-left: 0.25em;
+  margin-top: 0.3125em;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #2a2d36;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 .lineDiv2 {
-    position: static;
-    width: 6.125em;
-    height: 0em;
-    margin-left: 0.25em!important;
-    margin-top: 2.375em;
+  position: static;
+  width: 6.125em;
+  height: 0em;
+  margin-left: 0.25em !important;
+  margin-top: 2.375em;
 
-    border: 2px solid #2A2D36;
-    box-sizing: border-box;
+  border: 2px solid #2a2d36;
+  box-sizing: border-box;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 
 .subTextDiv4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5em 0.25em 0.125em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.25em 0.125em;
 
-    position: absolute;
-    width: 3.4375em;
-    height: 2.3125em;
-    margin-left: 46.875em;
-    margin-top: 6.8625em;
+  position: absolute;
+  width: 3.4375em;
+  height: 2.3125em;
+  margin-left: 46.875em;
+  margin-top: 6.8625em;
 }
 
 .subTextDivin4 > div {
-    position: static;
-    width: 2.9375em;
-    height: 1.1875em;
-    margin-left: 0.25em;
-    margin-top: 0.3125em;
-    
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    
-    color: #2A2D36;
-    
-    
-    /* Inside Auto Layout */
-    
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  position: static;
+  width: 2.9375em;
+  height: 1.1875em;
+  margin-left: 0.25em;
+  margin-top: 0.3125em;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+
+  color: #2a2d36;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
 .lineDiv3 {
-    position: static;
-    width: 2.9375em;
-    height: 0em;
-    margin-left: 0.25em!important;
-    margin-top: 2.375em;
+  position: static;
+  width: 2.9375em;
+  height: 0em;
+  margin-left: 0.25em !important;
+  margin-top: 2.375em;
 
-    border: 2px solid #2A2D36;
-    box-sizing: border-box;
+  border: 2px solid #2a2d36;
+  box-sizing: border-box;
 
-    /* Inside Auto Layout */
+  /* Inside Auto Layout */
 
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0.875em 0em;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0.875em 0em;
 }
