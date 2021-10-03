@@ -11,10 +11,13 @@ import { Artists } from "./components/SongInfo/Artists";
 import { History } from "./components/SongInfo/History";
 import { LikedSongs } from "./components/SongInfo/LikedSongs";
 import { YourEpisodes } from "./components/SongInfo/YourEpisodes";
+import { auth } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function App() {
   const [song, setSong] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [user] = useAuthState(auth);
   const NewSong = async () => {
     setIsLoading(true);
     let res = await axios.get(
@@ -47,7 +50,8 @@ function App() {
           <MobileLogin />
         </Route>
         <Route path="/otp">
-          <Otp />
+          {/* <Otp /> */}
+          {user ? <Homepage song={song} loadingFlag={isLoading} /> : <Otp />}
         </Route>
         <Route path="/history">
           <History />

@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import styles from "../../stylemodules/Style.module.css";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
-  const [auth, setAuth] = useState(false);
+  const [error, setError] = useState(false);
   const history = useHistory();
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -18,19 +19,19 @@ export const LoginPage = () => {
     setPass(e.target.value);
   };
   const handleLogin = async () => {
-    let { data } = await axios.get("http://localhost:3001/users");
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].email === email && data[i].pass === pass) {
-        setEmail("");
-        setPass("");
-        setAuth(true);
-        break;
+    let data = await axios.get("http://localhost:3001/users");
+    let userData = data.data;
+    let havedata = false;
+    for (let i = 0; i < userData.length; i++) {
+      if (userData[i].email === email && userData[i].password === pass) {
+        havedata = true;
       }
     }
-    if (auth) {
+    if (havedata) {
+      setError(false);
       history.push("/");
     } else {
-      alert("wrong Credentials");
+      setError(true);
     }
   };
   return (
@@ -63,19 +64,46 @@ export const LoginPage = () => {
           <p>Login with your email address.</p>
         </div>
         <div>
-          <input
-            onChange={handleEmail}
-            value={email}
-            type="text"
-            placeholder="Email Address"
-          />
-          <input
-            onChange={handlePass}
-            value={pass}
-            type="password"
-            placeholder="Password"
-          />
-          <button onClick={handleLogin}>Continue</button>
+          {error ? (
+            <>
+              <input
+                className={styles.error}
+                style={{ height: "43px" }}
+                value="Incorrect username/password. Please try again!"
+                type="text"
+                placeholder="Wrong"
+              />
+              <input
+                onChange={handleEmail}
+                value={email}
+                type="text"
+                placeholder="Email Address"
+              />
+              <input
+                onChange={handlePass}
+                value={pass}
+                type="password"
+                placeholder="Password"
+              />
+              <button onClick={handleLogin}>Continue</button>
+            </>
+          ) : (
+            <>
+              <input
+                onChange={handleEmail}
+                value={email}
+                type="text"
+                placeholder="Email Address"
+              />
+              <input
+                onChange={handlePass}
+                value={pass}
+                type="password"
+                placeholder="Password"
+              />
+              <button onClick={handleLogin}>Continue</button>
+            </>
+          )}
         </div>
         <div>
           <p>
