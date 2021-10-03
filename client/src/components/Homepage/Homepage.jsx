@@ -3,7 +3,7 @@ import jiologo from "../../../src/icons/jiologo.svg";
 import downarrow from "../../../src/icons/downarrow.svg";
 // import magnify from "../../../src/icons/magnify.svg";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import avatar from "../../../src/icons/avatar.svg";
 import microphone from "../../../src/icons/microphone.svg";
 import musicbox from "../../../src/icons/musicbox.svg";
@@ -13,17 +13,17 @@ import add from "../../../src/icons/add.svg";
 import repeat from "../../../src/icons/repeat.svg";
 import previous from "../../../src/icons/previous.svg";
 import next from "../../../src/icons/next.svg";
-// import play from "../../../src/icons/play.svg";
+import play from "../../../src/icons/play.svg";
+import pause from "../../icons/pause.svg";
 import shuffle from "../../../src/icons/shuffle.svg";
 import moredetails from "../../../src/icons/moredetails.svg";
 import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
 import Playing from "./Playing";
+import { Link } from "react-router-dom";
 
 import Search from "../SearchEngine/Search";
 
-
-  
 export const Homepage = ({ song, loadingFlag }) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
@@ -31,6 +31,16 @@ export const Homepage = ({ song, loadingFlag }) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songlink, setSongLink] = useState("");
+
+  const [songPlaying, setSongPlaying] = useState(false);
+  const audioEl = useRef(null);
+  useEffect(() => {
+    if (songPlaying) {
+      audioEl.current.play();
+    } else {
+      audioEl.current.pause();
+    }
+  }, [songPlaying]);
 
   const [categories, setCategories] = useState([
     "TRENDING NOW",
@@ -161,13 +171,20 @@ export const Homepage = ({ song, loadingFlag }) => {
   };
 
   const ModifyPlay = () => {
+    setSongPlaying(!songPlaying);
     setIsPlaying(!isPlaying);
     // console.log("URL", playingsong.media_url);
   };
 
   const ChangeSong = (el) => {
+    setSongPlaying(false);
     setPlayingSong(el);
     setSongLink(el.media_url);
+    setTimeout(() => {
+      setSongPlaying(true);
+    }, 300);
+    // setSongPlaying(true);
+    // ModifyPlay();
   };
 
   return (
@@ -180,14 +197,27 @@ export const Homepage = ({ song, loadingFlag }) => {
         <div className={styles["options-div"]}>
           <div>
             <div>Home</div>
-            <div className={styles["selectedpage-representation-line "]}></div>
+            <div
+              style={{
+                width: "43px",
+                height: "3px",
+                background: "#2a2d36",
+                border: "1px solid #2a2d36",
+                marginTop: "8%",
+              }}
+              className={styles["selectedpage-representation-line "]}
+            ></div>
           </div>
           <div>Browse</div>
           <div>Upgrade</div>
         </div>
         {/* Search bar */}
         {/* <div> */}
-        <input  onClick={toggleShowSearch} className={styles["search-bar"]} placeholder={"Search"} />
+        <input
+          onClick={toggleShowSearch}
+          className={styles["search-bar"]}
+          placeholder={"Search"}
+        />
         {/* <img className={styles["magnify-icon"]} src={magnify} alt="Search Icon" /> */}
         {/* </div> */}
         {showSearchBar ? <Search /> : null}
@@ -219,7 +249,10 @@ export const Homepage = ({ song, loadingFlag }) => {
       </div>
       {/* Navbar end */}
       {/* Separation Line between Navbar and Body */}
-      <div className={styles[".navbar-body-separation"]}></div>
+      <div
+        style={{ width: "100%", height: "1px", background: "#e9e9e9" }}
+        className={styles[".navbar-body-separation"]}
+      ></div>
       {/* User profile modal start */}
       <UserProfile showprofile={showingProfile}>
         <ProfileTexts>My Music</ProfileTexts>
@@ -278,19 +311,52 @@ export const Homepage = ({ song, loadingFlag }) => {
             </div>
             <div className={styles["library-list-items"]}>
               <img src={history} alt="mic" />
-              <div className={styles["library-list-text"]}>History</div>
+
+              <div className={styles["library-list-text"]}>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/history"
+                >
+                  {" "}
+                  History{" "}
+                </Link>
+              </div>
             </div>
             <div className={styles["library-list-items"]}>
               <img src={musicbox} alt="mic" />
-              <div className={styles["library-list-text"]}>Liked Songs</div>
+              <div className={styles["library-list-text"]}>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/likedsongs"
+                >
+                  {" "}
+                  Liked Songs{" "}
+                </Link>
+              </div>
             </div>
             <div className={styles["library-list-items"]}>
               <img src={podcast} alt="mic" />
-              <div className={styles["library-list-text"]}>Your Episodes</div>
+              <div className={styles["library-list-text"]}>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/yourepisodes"
+                >
+                  {" "}
+                  Your Episodes{" "}
+                </Link>
+              </div>
             </div>
             <div className={styles["library-list-items"]}>
               <img src={microphone} alt="mic" />
-              <div className={styles["library-list-text"]}>Artists</div>
+              <div className={styles["library-list-text"]}>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/artists"
+                >
+                  {" "}
+                  Artists{" "}
+                </Link>
+              </div>
             </div>
             <br />
             <button className={styles["newplaylist-button"]}>
@@ -317,6 +383,7 @@ export const Homepage = ({ song, loadingFlag }) => {
                     {song.map((el) => {
                       return (
                         <div
+                          key={el.id}
                           onClick={() => {
                             ChangeSong(el);
                           }}
@@ -373,8 +440,22 @@ export const Homepage = ({ song, loadingFlag }) => {
         <div className={styles["playback-controls-div"]}>
           <img src={repeat} alt="repeat" />
           <img src={previous} alt="previous" />
-          <div onClick={ModifyPlay}>
-            <Playing source="https://aac.saavncdn.com/899/4bc22586d61037edf2178059182ab962_320.mp4" />
+          <div>
+            {/* onClick={ModifyPlay}> */}
+            {/* <Playing source={playingsong.vlink} /> */}
+            <img
+              // onClick={isPlaying ? pauseSong : playSong}
+              onClick={ModifyPlay}
+              src={songPlaying ? pause : play}
+              alt=""
+            ></img>
+            <audio
+              // src="http://h.saavncdn.com/987/cd902d048c13e5ce6ca84cc409746a5d.mp3"
+              src={songlink}
+              //type="audio/mp3"
+              ref={audioEl}
+              // controls
+            ></audio>
           </div>
           <img src={next} alt="next" />
           <img src={shuffle} alt="shuffle" />
