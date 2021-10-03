@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Show from "./Show";
 import styled from "styled-components";
 import styles from "../../stylemodules/Homepage.module.css";
-export default function Search({ toggleShowSearch }) {
+export default function Search({ toggleShowSearch, ChangeSong }) {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
@@ -818,6 +818,7 @@ export default function Search({ toggleShowSearch }) {
         />
         <img
           src="/musicimages/cross.svg"
+          alt=""
           onClick={toggleShowSearch}
           style={{
             background: "#2BC5B4",
@@ -834,9 +835,19 @@ export default function Search({ toggleShowSearch }) {
       </InputContainer>
       <div className="search-results">
         {!loading ? (
-          <Show data={preData} loading={loading} />
+          <Show
+            toggleShowSearch={toggleShowSearch}
+            ChangeSong={ChangeSong}
+            data={preData}
+            loading={loading}
+          />
         ) : (
-          <Show data={data} loading={loading} />
+          <Show
+            toggleShowSearch={toggleShowSearch}
+            ChangeSong={ChangeSong}
+            data={data}
+            loading={loading}
+          />
         )}
       </div>
     </>

@@ -130,7 +130,12 @@ function Navbar() {
         {/* Menu Options */}
         <div className={styles["options-div"]}>
           <div>
-            <div>Home</div>
+            <div>
+              {" "}
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                Home
+              </Link>
+            </div>
             <div
               style={{
                 width: "43px",

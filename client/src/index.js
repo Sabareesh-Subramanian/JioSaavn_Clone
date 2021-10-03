@@ -5,12 +5,15 @@ import App from "./App";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { OtpValidation } from "./contexts/OtpContext";
+import { SongContextProvider } from "./contexts/SongContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <OtpValidation>
-        <App />
+        <SongContextProvider>
+          <App />
+        </SongContextProvider>
       </OtpValidation>
     </Router>
   </React.StrictMode>,

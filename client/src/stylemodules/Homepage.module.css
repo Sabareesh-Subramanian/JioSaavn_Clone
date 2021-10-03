@@ -252,6 +252,7 @@
   width: 131px;
   height: 172px;
   margin-right: 2%;
+  cursor: pointer;
 }
 .songs-info-div > img {
   height: 70%;
@@ -383,7 +384,7 @@
   vertical-align: middle;
   margin: auto;
 }
-.search-input-box{
+.search-input-box {
   height: 70%;
   width: 92%;
   margin-top: 0.5%;
@@ -393,4 +394,3 @@
   border: 0px;
   outline: none;
 }
-

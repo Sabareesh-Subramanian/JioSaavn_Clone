@@ -20,19 +20,28 @@ import shuffle from "../../../src/icons/shuffle.svg";
 import moredetails from "../../../src/icons/moredetails.svg";
 import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
-import Playing from "./Playing";
+import twitter from "../../../src/icons/twitter.svg";
+import facebook from "../../../src/icons/facebook.svg";
+import instagram from "../../../src/icons/instagram.svg";
+import linkedin from "../../../src/icons/linkedin.svg";
+import youtube from "../../../src/icons/youtube.svg";
+// import Playing from "./Playing";
 // import { Link } from "react-router-dom";
 import Search from "../SearchEngine/Search";
 import { OtpContext } from "../../contexts/OtpContext";
+import { SongContext } from "../../contexts/SongContext";
 
 export const Homepage = ({ song, loadingFlag }) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
   const [showingProfile, setShowingProfile] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [songlink, setSongLink] = useState("");
+  // const [songlink, setSongLink] = useState("");
   const { loggedIn } = useContext(OtpContext);
   const { handleLoggedIn } = useContext(OtpContext);
+
+  const { playingSong } = useContext(SongContext);
+  const { SetNewSong } = useContext(SongContext);
 
   const [songPlaying, setSongPlaying] = useState(false);
   const audioEl = useRef(null);
@@ -44,7 +53,7 @@ export const Homepage = ({ song, loadingFlag }) => {
     }
   }, [songPlaying]);
 
-  const [categories, setCategories] = useState([
+  const [categories] = useState([
     "TRENDING NOW",
     "NEW RELEASES",
     "EDITORIAL PICKS",
@@ -54,13 +63,13 @@ export const Homepage = ({ song, loadingFlag }) => {
     "FRESH HITS",
     "TOP SONGS",
   ]);
-  const [playingsong, setPlayingSong] = useState({
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfe9JQ56xzr8HlpDnWufzRFI3RUtXoMCAvwQ&usqp=CAU",
-    album: "",
-    song: "",
-    media_url: "",
-  });
+  // const [playingsong, setPlayingSong] = useState({
+  //   image:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfe9JQ56xzr8HlpDnWufzRFI3RUtXoMCAvwQ&usqp=CAU",
+  //   album: "",
+  //   song: "",
+  //   media_url: "",
+  // });
 
   const Arrow = styled.img`
     transform: ${(props) => (props.flag ? "rotate(180deg)" : "rotate(0deg)")};
@@ -193,8 +202,9 @@ export const Homepage = ({ song, loadingFlag }) => {
 
   const ChangeSong = (el) => {
     setSongPlaying(false);
-    setPlayingSong(el);
-    setSongLink(el.media_url);
+    // setPlayingSong(el);
+    SetNewSong(el);
+    // setSongLink(el.media_url);
     setTimeout(() => {
       setSongPlaying(true);
     }, 300);
@@ -206,12 +216,26 @@ export const Homepage = ({ song, loadingFlag }) => {
     <>
       {/* Navbar start*/}
       <div className={styles["navbar-parent"]}>
-        {/* Logo */}
-        <img src={jiologo} alt="Logo"></img>
+        {/* Logo */}{" "}
+        <img src={jiologo} alt="Logo">
+          {/* <Link to="/"></Link> */}
+        </img>{" "}
+        {/* </Link> */}
         {/* Menu Options */}
         <div className={styles["options-div"]}>
           <div>
-            <div>Home</div>
+            <div>
+              <Link
+                style={{
+                  border: "0px",
+                  textDecoration: "none",
+                  color: "black",
+                }}
+                to="/"
+              >
+                Home
+              </Link>
+            </div>
             <div
               style={{
                 width: "43px",
@@ -236,7 +260,7 @@ export const Homepage = ({ song, loadingFlag }) => {
         {/* <img className={styles["magnify-icon"]} src={magnify} alt="Search Icon" /> */}
         {/* </div> */}
         <SearchDropBox>
-          <Search toggleShowSearch={toggleShowSearch} />
+          <Search ChangeSong={ChangeSong} toggleShowSearch={toggleShowSearch} />
         </SearchDropBox>
         {/* {showSearchBar ? <Search /> : null} */}
         <div onClick={showLanguages} className={styles["languages-div"]}>
@@ -442,7 +466,14 @@ export const Homepage = ({ song, loadingFlag }) => {
             <div className={styles["songs-separation-line"]}></div>
             <div className={styles["footer-media-div"]}>
               <div>2021 Saavn Media Pvt. Ltd.</div>
-              <div>FOLLOW US</div>
+              <div style={{ display: "flex", width: "40%" }}>
+                <div>FOLLOW US</div>
+                <img style={{ margin: "0 4%" }} src={facebook} alt="" />
+                <img style={{ margin: "0 4%" }} src={twitter} alt="" />
+                <img style={{ margin: "0 4%" }} src={youtube} alt="" />
+                <img style={{ margin: "0 4%" }} src={instagram} alt="" />
+                <img style={{ margin: "0 4%" }} src={linkedin} alt="" />
+              </div>
             </div>
             {/* Footer End */}
           </div>
@@ -454,12 +485,12 @@ export const Homepage = ({ song, loadingFlag }) => {
       {/* Playback div start */}
       <div className={styles["playback-div"]}>
         <div className={styles["playback-song-div"]}>
-          <img src={playingsong.image} alt="album" />
+          <img src={playingSong.image} alt="album" />
           <div>
             <div className={styles["album-name"]}>
-              <b>{playingsong.album}</b>
+              <b>{playingSong.album}</b>
             </div>
-            <div className={styles["singer-name"]}>{playingsong.song}</div>
+            <div className={styles["singer-name"]}>{playingSong.song}</div>
           </div>
         </div>
         <div className={styles["playback-controls-div"]}>
@@ -476,7 +507,7 @@ export const Homepage = ({ song, loadingFlag }) => {
             ></img>
             <audio
               // src="http://h.saavncdn.com/987/cd902d048c13e5ce6ca84cc409746a5d.mp3"
-              src={songlink}
+              src={playingSong.media_url}
               //type="audio/mp3"
               ref={audioEl}
               // controls
