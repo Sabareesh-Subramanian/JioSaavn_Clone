@@ -3,13 +3,15 @@ import { SignUp } from "./components/SignUp";
 import { LoginPage } from "./components/Login";
 import { MobileLogin } from "./components/MobileLogin";
 import { Homepage } from "./components/Homepage/Homepage";
-import { Artists } from "./Artists";
-import { History } from "./History";
-import { LikedSongs } from "./LikedSongs";
-import { YourEpisodes } from "./YourEpisodes";
+import { Artists } from "./components/SongInfo/Artists";
+import { History } from "./components/SongInfo/History";
+import { LikedSongs } from "./components/SongInfo/LikedSongs";
+import { YourEpisodes } from "./components/SongInfo/YourEpisodes";
+// import { SongInfo } from "./components/SongInfo/SongInfo";
 function App() {
   return (
     <div>
+      {/* <SongInfo /> */}
       <Switch>
         <Route exact path="/">
           <SignUp />
@@ -24,7 +26,7 @@ function App() {
           <MobileLogin />
         </Route>
         <Route path="/home">
-          <Homepage />
+          <Homepage /> 
         </Route>
         <Route path="/history">
           <History />

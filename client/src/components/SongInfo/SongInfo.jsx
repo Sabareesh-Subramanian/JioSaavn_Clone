@@ -7,7 +7,6 @@ function SongInfo() {
         <div>
             <Navbar />
             <Sidebar />
-
         </div>
     )
 }
