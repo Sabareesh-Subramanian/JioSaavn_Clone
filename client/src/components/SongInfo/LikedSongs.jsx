@@ -1,7 +1,24 @@
+import { useEffect, useState } from "react";
 import styles from "./SongInfo.module.css";
+import axios from "axios";
 function LikedSongs () {
+
+    const [likedSongs, setLikedSongs] = useState([]);
+
+    useEffect(() => {
+      
+        axios.get("https://apg-saavn-api.herokuapp.com/result/?q=bellbottom").then((res) => {
+            console.log(res.data)
+            setLikedSongs(res.data);
+        });
+    },[]);
+
     return (
-        <div>
+        <div  style = {{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%"
+        }}>
               <div className={styles["headDiv"]}>Your Favourites</div>
 
             <div className={styles["subTextDiv1"]}>
@@ -25,6 +42,41 @@ function LikedSongs () {
             <div className={styles["subTextDiv4"]}>
                  <div>Artists</div>
             </div>
+            <div className={styles["shortLine-Lik"]}></div>
+            <div className={styles["bigLine-Lik"]}></div>
+
+            <div style= {{
+                marginTop: "13%",
+            }} >
+            {likedSongs.map((e) => (
+              <div
+                    key = {e.id}
+                    className = {styles["hisContDiv"]}
+                >
+                    <img src="/Images/pause.svg" alt="image_pause" className={styles["pauseImg"]} />
+                    <img src= {e.image} alt="song_image" width="25px" className={styles["songImg"]} />
+                    <div className={styles["songName"]}>
+                        <div>
+                            {e.song}
+                        </div>
+                    </div>
+                    <div className={styles["singerName"]}>
+                        <div className={styles["subSingerName"]}>
+                            <div>
+                                {e.singers}
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles["likeDiv"]}>
+                    <img src="/Images/redlike.svg" alt="image_like" className={styles["likeImg"]} />
+                    </div>
+                    <div className={styles["duration"]}>
+                        {(e.duration)/100}
+                    </div>
+                </div>
+            ))}
+            </div>
+
         </div>
     )
 }
