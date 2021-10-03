@@ -1,7 +1,6 @@
 import styles from "../../stylemodules/Homepage.module.css";
 import jiologo from "../../../src/icons/jiologo.svg";
 import downarrow from "../../../src/icons/downarrow.svg";
-// import magnify from "../../../src/icons/magnify.svg";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
@@ -14,25 +13,20 @@ import add from "../../../src/icons/add.svg";
 import repeat from "../../../src/icons/repeat.svg";
 import previous from "../../../src/icons/previous.svg";
 import next from "../../../src/icons/next.svg";
-// import play from "../../../src/icons/play.svg";
 import shuffle from "../../../src/icons/shuffle.svg";
 import moredetails from "../../../src/icons/moredetails.svg";
 import volume from "../../../src/icons/volume.svg";
 import expand from "../../../src/icons/expand.svg";
 import Playing from "./Playing";
-
 import Search from "../SearchEngine/Search";
 import { OtpContext } from "../../contexts/OtpContext";
 
 export const Homepage = ({ song, loadingFlag }) => {
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showingLanguages, setShowingLanguages] = useState(false);
-  // const [showingProfile, setShowingProfile] = useState(false);
-  // const [loggedIn, setLoggedIn] = useState(false);
+  const [showingProfile, setShowingProfile] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [songlink, setSongLink] = useState("");
-  const { showingProfile } = useContext(OtpContext);
-  const { handleProfile } = useContext(OtpContext);
   const { loggedIn } = useContext(OtpContext);
   const { handleLoggedIn } = useContext(OtpContext);
 
@@ -152,12 +146,12 @@ export const Homepage = ({ song, loadingFlag }) => {
   };
 
   const showProfile = () => {
-    handleProfile(!showingProfile);
+    setShowingProfile(!showingProfile);
   };
 
   const LoggingOut = () => {
     handleLoggedIn(!loggedIn);
-    handleProfile(false);
+    setShowingProfile(false);
   };
 
   const LoggingIn = () => {

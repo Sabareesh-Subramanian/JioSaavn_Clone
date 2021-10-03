@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
-import { OtpContext } from "../../contexts/OtpContext";
 import styles from "../../stylemodules/Style.module.css";
 
 export const LoginPage = () => {
@@ -14,7 +12,6 @@ export const LoginPage = () => {
   const [pass, setPass] = useState("");
   const [error, setError] = useState(false);
   const history = useHistory();
-  const { handleProfile } = useContext(OtpContext);
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -28,7 +25,6 @@ export const LoginPage = () => {
     for (let i = 0; i < userData.length; i++) {
       if (userData[i].email === email && userData[i].password === pass) {
         havedata = true;
-        handleProfile(true);
       }
     }
     if (havedata) {

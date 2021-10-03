@@ -16,17 +16,17 @@ export const Register = styled.div`
     width: 100%;
   }
   & > div:nth-child(1) > div:nth-child(2) {
-    width: 31em;
-    margin: 4.79625em auto;
+    width: 67.945%;
+    margin: 16.22% auto;
     margin-bottom: 0;
   }
   & > div:nth-child(1) > div:nth-child(2) > img {
     width: 100%;
   }
   & > div:nth-child(1) > div:nth-child(3) {
-    width: 17.25em;
+    width: 50%;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 4.44%;
     text-align: center;
   }
   & > div:nth-child(1) > div:nth-child(3) > p:nth-child(1) {
@@ -39,9 +39,9 @@ export const Register = styled.div`
     color: #ffffff;
   }
   & > div:nth-child(1) > div:nth-child(4) {
-    width: 17.25em;
+    width: 50%;
     margin: auto;
-    margin-top: 12px;
+    margin-top: 1.33%;
     text-align: center;
   }
   & > div:nth-child(1) > div:nth-child(4) > p:nth-child(1) {

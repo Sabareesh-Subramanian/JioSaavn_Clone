@@ -50,8 +50,8 @@ function App() {
           <MobileLogin />
         </Route>
         <Route path="/otp">
-          <Otp />
-          {/* {user ? <Homepage song={song} loadingFlag={isLoading} /> : <Otp />} */}
+          {/* <Otp /> */}
+          {user ? <Homepage song={song} loadingFlag={isLoading} /> : <Otp />}
         </Route>
         <Route path="/history">
           <History />
