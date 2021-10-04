@@ -61,7 +61,7 @@ export const MobileLogin = () => {
               handleNumber(e);
             }}
             type="text"
-            placeholder="Enter your mobile number"
+            placeholder="Enter your mobile number prefixed with +91"
           />
           <div id="recaptcha-container"></div>
           <button onClick={handleLogin}>Continue</button>
