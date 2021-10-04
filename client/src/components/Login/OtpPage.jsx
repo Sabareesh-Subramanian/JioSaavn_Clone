@@ -11,6 +11,8 @@ import { useHistory } from "react-router-dom";
 // import { useAuthState } from "react-firebase-hooks/auth";
 
 export const Otp = ({ song, loadingFlag }) => {
+  const { loggedIn } = useContext(OtpContext);
+  const { handleLoggedIn } = useContext(OtpContext);
   // const history = useHistory();
   // const [otp, setOtp] = useState("");
   const { mynumber } = useContext(OtpContext);
@@ -31,6 +33,7 @@ export const Otp = ({ song, loadingFlag }) => {
     //   .catch((err) => {
     //     alert("Wrong code");
     //   });
+    // handleLoggedIn(true);
     history.push("/home");
   };
   return (
