@@ -275,13 +275,17 @@ export const Homepage = ({ song, loadingFlag }) => {
           {/* Music Languages */}
         </div>
         <Login loggedin={loggedIn} onClick={LoggingIn}>
-          <Link style={{ textDecoration: "none", color: "black" }} to="/login">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/mobile">
+            {" "}
+            {/* Keeping it to mobile login to help with Vercel deployment */}
             Login
           </Link>
           {/* Login */}
         </Login>
         <Signup loggedin={loggedIn} onClick={LoggingIn}>
-          <Link style={{ textDecoration: "none", color: "black" }} to="/signup">
+          <Link style={{ textDecoration: "none", color: "black" }} to="/mobile">
+            {" "}
+            {/* Keeping it to mobile login to help with Vercel deployment */}
             Sign Up
           </Link>
         </Signup>
