@@ -27,7 +27,7 @@ This project is a complete clone UI of the jioSaavn website with the functionali
 ## Used libraries
 <ul>
   <li>axios.</li>
-  <li>firebse.</li>
+  <li>firebase.</li>
   <li>json-Server.</li>
   <li>react-firebase-hooks.</li>
   <li>react-router-dom.</li>
