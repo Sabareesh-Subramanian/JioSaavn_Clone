@@ -3,6 +3,15 @@ import { useEffect, useState } from "react";
 import Show from "./Show";
 import styled from "styled-components";
 import styles from "../../stylemodules/Homepage.module.css";
+const InputContainer = styled.div`
+  width: 94%;
+  height: 48px;
+  display: flex;
+
+  border-bottom: 1px solid #e9e9e9;
+  zindex: 10;
+  margin: auto;
+`;
 export default function Search({ toggleShowSearch, ChangeSong }) {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
@@ -758,15 +767,6 @@ export default function Search({ toggleShowSearch, ChangeSong }) {
     margin-top: 1%;
     border-radius: 0px;
     margin-left: 20px;
-  `;
-  const InputContainer = styled.div`
-    width: 94%;
-    height: 48px;
-    display: flex;
-
-    border-bottom: 1px solid #e9e9e9;
-    zindex: 10;
-    margin: auto;
   `;
 
   const searchData = (text) => {
