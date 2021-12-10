@@ -2,6 +2,8 @@
   "name": "jiosaavn-clone",
   "version": "0.1.0",
   "private": true,
+  "proxy":"https://apg-saavn-api.herokuapp.com/",
+  
   "dependencies": {
     "@react-navigation/native": "^6.0.4",
     "@testing-library/jest-dom": "^5.14.1",

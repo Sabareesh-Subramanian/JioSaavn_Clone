@@ -762,7 +762,8 @@ function App() {
   const NewSong = async () => {
     setIsLoading(true);
     let res = await axios.get(
-      "https://apg-saavn-api.herokuapp.com/result/?q=thanimaye/"
+      "https://apg-saavn-api.herokuapp.com/result/?q=thanimaye/",
+      { mode: "cors" }
     );
     // console.log("res:", res.data);
     setSong([...song, ...res.data]);
