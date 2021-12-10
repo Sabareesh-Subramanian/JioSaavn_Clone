@@ -375,10 +375,11 @@
   background: #29c6b3;
   border-radius: 8px;
   color: white;
-  height: 10%;
+  height: 30%;
   width: 50%;
   text-align: center;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
