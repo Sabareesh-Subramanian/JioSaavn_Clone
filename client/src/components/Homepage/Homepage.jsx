@@ -422,7 +422,21 @@ export const Homepage = ({ song, loadingFlag }) => {
         {/* Songs display start */}
         {loadingFlag ? (
           <div className={styles["loading-div"]}>
-            <i>We're fetching your favorite and best tunes. Please hold on!</i>
+            <i>We're fetching your favorite and best tunes. Please hold on!</i>{" "}
+            {/* <br /> */}
+            <i>
+              If you're not able to see the songs for more than 10 seconds,
+              please install and enable this{" "}
+              <a
+                href="https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino?hl=en"
+                rel="noreferrer"
+                target="_blank"
+              >
+                CORS extension.
+              </a>
+            </i>{" "}
+            <br />
+            <i>Believe us, its safe to use this extension :)</i>
           </div>
         ) : (
           <div className={styles["songs-list-div"]}>
