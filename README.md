@@ -8,11 +8,12 @@ This project is a complete clone UI of the jioSaavn website with the functionali
     <li>https://github.com/Sabareesh-Subramanian/JioSaavn_Clone.git</li>
     <li>To start the server :</li>
     <ul>
-      <li>cd backend.</li>
+      <li>cd server.</li>
       <li>Execute the command <b>json-server db.json --watch --port 3001</b> in the terminal.</li>
     </ul>
     <li>To execute the client:</li>
     <ul>
+      <li>cd client.</li>
       <li>Execute the command <b>npm start</b> in the terminal.</li>
       </ul>
   </ul>
@@ -21,14 +22,15 @@ This project is a complete clone UI of the jioSaavn website with the functionali
 ## Built with
 <ul>
   <li>React.</li>
-  <li>Mock-Server.</li>
+  <li>JSON Mock Server.</li>
+  <li>Firebase.</li>
 </ul>
 
 ## Used libraries
 <ul>
   <li>axios.</li>
   <li>firebase.</li>
-  <li>json-Server.</li>
+  <li>json-server.</li>
   <li>react-firebase-hooks.</li>
   <li>react-router-dom.</li>
   <li>styled-components.</li>
@@ -50,20 +52,25 @@ This project is a complete clone UI of the jioSaavn website with the functionali
 ## Functionalities Added
 <ul>
   <li>Registration of new user using the mock server.</li>
-  <li>User validation while login using the email id and password they used while registeration.</li>
-  <li>Login Functionality using the Mobile Number.</li>
-  <li>Implemented Firebase for OTP Validattion.</li>
+  <li>User validation while login using email id and password with the details used for registration.</li>
+  <li>Login Functionality using Mobile Number.</li>
+  <li>Implemented Firebase for OTP Validation.</li>
   <li>Search Functionality over the home page itself to look for songs, artists or albums.</li>
   <li>Playing/Pausing the songs over the homepage.</li>
-  <li>Navidation to various pages using the sidebar that has routes enabled.</li>
+  <li>Navigation to various pages using the sidebar that has routes enabled.</li>
 </ul>
 
 ## Team Members 
 <ul>
-<li><a href="https://github.com/Pulkit0111">Pulkit Tyagi</a>
-<li><a href="https://github.com/Sabareesh-Subramanian">Sabareesh Subramanian</a>
-<li><a href="https://github.com/Mrrupendra">Rupendra Singh</a>
-<li><a href="https://github.com/mahi98jat">Mahipal Singh Haritwal</a>
+  <li><a href="https://github.com/Pulkit0111">Pulkit Tyagi</a></li>
+<li><a href="https://github.com/Sabareesh-Subramanian">Sabareesh Subramanian</a></li>
+<li><a href="https://github.com/Mrrupendra">Rupendra Singh</a></li>
+<li><a href="https://github.com/mahi98jat">Mahipal Singh Haritwal</a></li>
+</ul>
+
+## Related Blogs 
+<ul>
+  <li><a href="https://medium.com/@sabareeshsubramanian/building-a-clone-of-jiosaavn-com-using-html-css-and-react-js-f91933199a7">Building a clone of JioSaavn.com using HTML, CSS, and REACT.js</a></li>
 </ul>
 
 ## A quick Glimpse of our Work
