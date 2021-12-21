@@ -26,7 +26,7 @@ This project is a complete clone UI of the jioSaavn website with the functionali
   <li>Firebase.</li>
 </ul>
 
-## Used libraries
+## Libraries used
 <ul>
   <li>axios.</li>
   <li>firebase.</li>
@@ -36,17 +36,17 @@ This project is a complete clone UI of the jioSaavn website with the functionali
   <li>styled-components.</li>
 </ul>
 
-## Created Pages 
+## Pages Created 
 <ul>
-  <li>Home Page.</li>
-  <li>User Registration Page.</li>
-  <li>User Login Page (Email Login).</li>
-  <li>User Login Page (Mobile Number Login).</li>
-  <li>OTP Validation Page.</li>
-  <li>History Page.</li>
-  <li>Liked Songs Page.</li>
-  <li>Your Episodes Page.</li>
-  <li>Artists Page.</li>
+  <li>Home Page</li>
+  <li>User Registration Page</li>
+  <li>User Login Page (Email Login)</li>
+  <li>User Login Page (Mobile Number Login)</li>
+  <li>OTP Validation Page</li>
+  <li>History Page</li>
+  <li>Liked Songs Page</li>
+  <li>Your Episodes Page</li>
+  <li>Artists Page</li>
 </ul>
 
 ## Functionalities Added
@@ -68,9 +68,10 @@ This project is a complete clone UI of the jioSaavn website with the functionali
 <li><a href="https://github.com/mahi98jat">Mahipal Singh Haritwal</a></li>
 </ul>
 
-## Related Blogs 
+## Related Links 
 <ul>
-  <li><a href="https://medium.com/@sabareeshsubramanian/building-a-clone-of-jiosaavn-com-using-html-css-and-react-js-f91933199a7">Building a clone of JioSaavn.com using HTML, CSS, and REACT.js</a></li>
+  <li><a href="https://medium.com/@sabareeshsubramanian/building-a-clone-of-jiosaavn-com-using-html-css-and-react-js-f91933199a7">Blog - Building a clone of JioSaavn.com using HTML, CSS, and REACT.js</a></li>
+  <li>For a visual walkthrough of the features, please visit this <a href="https://drive.google.com/file/d/1dVw7bWxbZByXDcYy47M3CoV_fHvtDhTW/view?usp=sharing">demo video</a>.</li>
 </ul>
 
 ## A quick Glimpse of our Work
